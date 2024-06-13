@@ -6,8 +6,8 @@ backoff==2.2.1
 coloredlogs==15.0.1
 flvlib3@https://github.com/zkonge/flvlib3/archive/master.zip
 hikvisionapi==0.3.2
-packaging==24.0
-pyunifiprotect==6.0.1
+packaging==24.1
+uiprotect==1.2.1
 reolinkapi==0.1.5
 websockets==12.0
 xmltodict==0.13.0
