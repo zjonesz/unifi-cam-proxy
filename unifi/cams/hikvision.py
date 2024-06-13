@@ -67,7 +67,7 @@ class HikvisionCam(UnifiCamBase):
 
     async def get_video_settings(self) -> dict[str, Any]:
         if self.ptz_supported:
-            r = (await self.cam.PTZCtrl.channels[1].status(method="get"))["PTZStatus"][
+            r = (await self.cam.PTZCtrl.channels[self.channel].status(method="get"))["PTZStatus"][
                 "AbsoluteHigh"
             ]
             return {
@@ -98,7 +98,7 @@ class HikvisionCam(UnifiCamBase):
                     },
                 }
             }
-            await self.cam.PTZCtrl.channels[1].absolute(
+            await self.cam.PTZCtrl.channels[self.channel].absolute(
                 method="put", data=xmltodict.unparse(req, pretty=True)
             )
 
